@@ -14,10 +14,10 @@ ggplot(zoo, aes(x=Date2, y=Likes)) +
   labs(subtitle="(taking note of the death of Harambe)", 
        y="Number of Likes", 
        x="Month", 
-       title="Number of Instagram Likes over time (April 1st, 2016 - July 30th, 2016)", 
+       title="Number of Instagram likes over time (April 1st, 2016 - July 30th, 2016)", 
        caption = "Source: Cincinnati Zoo Instagram")+
   theme_light() +
-  theme(axis.text.x = element_text(angle=65, vjust=0.6)) +
+  theme(text = element_text(size = 20), axis.text.x = element_text(angle=65, vjust=0.6)) +
   geom_vline(data=zoo,aes(xintercept=as.numeric(as.Date("2016-05-28"))), color = "skyblue")
   
 #Circling before and after Harambe
@@ -36,7 +36,7 @@ ggplot(zoo, aes(x=Date2, y=Likes)) +
   labs(subtitle="(taking note of the death of Harambe)", 
        y="Number of Likes", 
        x="Month", 
-       title="Number of Instagram Likes over time (April 1st, 2016 - July 30th, 2016)", 
+       title="Number of Instagram likes over time (April 1st, 2016 - July 30th, 2016)", 
        caption = "Source: Cincinnati Zoo Instagram")+
   geom_encircle(aes(x=Date2, y=Likes), 
                 data=zoo_afterharambe, 
@@ -44,7 +44,7 @@ ggplot(zoo, aes(x=Date2, y=Likes)) +
                 size=2, 
                 expand=0.03) +
   theme_light() +
-  theme(axis.text.x = element_text(angle=65, vjust=0.6)) +
+  theme(text = element_text(size = 20), axis.text.x = element_text(angle=65, vjust=0.6)) +
   geom_vline(data=zoo,aes(xintercept=as.numeric(as.Date("2016-05-28"))), color = "skyblue")
 
 zoo_beforeharambe <- zoo[zoo$Date2 >= "2016-04-01" & 
@@ -61,7 +61,7 @@ ggplot(zoo, aes(x=Date2, y=Likes)) +
   labs(subtitle="(taking note of the death of Harambe)", 
        y="Number of Likes", 
        x="Month", 
-       title="Number of Instagram Likes over time (April 1st, 2016 - July 30th, 2016)", 
+       title="Number of Instagram likes over time (April 1st, 2016 - July 30th, 2016)", 
        caption = "Source: Cincinnati Zoo Instagram")+
   geom_encircle(aes(x=Date2, y=Likes), 
                 data=zoo_beforeharambe, 
@@ -69,6 +69,7 @@ ggplot(zoo, aes(x=Date2, y=Likes)) +
                 size=2, 
                 expand=0.03) +
   theme_light() +
-  theme(axis.text.x = element_text(angle=65, vjust=0.6)) +
+  theme(text = element_text(size = 20), axis.text.x = element_text(angle=65, vjust=0.6)) +
   geom_vline(data=zoo,aes(xintercept=as.numeric(as.Date("2016-05-28"))), color = "skyblue")
+
 
